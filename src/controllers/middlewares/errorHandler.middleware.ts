@@ -20,8 +20,7 @@ export default class ErrorHandler implements ExpressErrorMiddlewareInterface {
       const errors = _.result(error, 'errors') as object[];
       message = errors.map((e: any) => Object.values(e.constraints).join(', ')).join('. ');
     } else if (!(error instanceof CustomError)) {
-      Logger.Err(`Unhandled Error: ${error}`);
-      Logger.Err(`Unhandled Error: ${error.stack}`);
+      Logger.Err(`Unhandled Error: ${error} - ${error.stack}`);
     }
 
     response.status(statusCode).json({ error: message, status: statusCode });
