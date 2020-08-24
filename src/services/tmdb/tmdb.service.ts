@@ -1,5 +1,4 @@
 import * as querystring from 'querystring';
-import * as _ from 'lodash';
 import axios from 'axios';
 import { TMDBService } from '../../types/tmdb/tmdb.service';
 import { Episode as IEpisode } from '../../types/tmdb/episode';
@@ -32,6 +31,8 @@ class TMDBServiceImplementation implements TMDBService {
   getAllEpisodesBySeries(seriesId: number, seasonsIdentifiers: number[]): Promise<IEpisode[]> {
     const seasonsFields = TMDBServiceImplementation.generateSeasonIdentifiers(seasonsIdentifiers);
 
+    // Let's use append_to_response here and make our code faster
+    // https://developers.themoviedb.org/3/getting-started/append-to-response
     const query = {
       api_key: this.apiKey,
       append_to_response: seasonsFields.join(','),
