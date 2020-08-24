@@ -1,7 +1,7 @@
 # How to run service
 - Build and run container with
 ```bash
-./cli/run
+./cli/run.sh
 ```
 - Create MongoDB index:
 ```bash
