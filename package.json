@@ -1,0 +1,78 @@
+{
+  "name": "test-task-for-exadel",
+  "version": "1.0.0",
+  "description": "Test Task App for Exadel",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist/ && ./node_modules/.bin/tsc",
+    "start": "node dist/src/index.js",
+    "start:dev": "./node_modules/.bin/tsc && nodemon --legacy-watch --config nodemon.json",
+    "test": "npx jest --passWithNoTests --runInBand --no-cache",
+    "eslint": "npx eslint --ignore-pattern 'node_modules' .",
+    "eslint:fix": "npx eslint --fix --ignore-pattern 'node_modules' ."
+  },
+  "author": "Volodymyr Koval",
+  "license": "ISC",
+  "dependencies": {
+    "@overnightjs/core": "^1.7.4",
+    "@overnightjs/logger": "^1.1.12",
+    "@tsed/platform-express": "^5.62.6",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
+    "class-validator-jsonschema": "^2.0.3",
+    "config": "^3.3.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "memcached": "^2.2.2",
+    "mongodb": "^3.6.0",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0-alpha.6",
+    "routing-controllers-openapi": "^2.0.1",
+    "swagger-ui-express": "^4.1.4",
+    "ts-express-decorators": "^5.62.6",
+    "typescript": "^4.0.2"
+  },
+  "jest": {
+    "roots": [
+      "__tests__"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "verbose": true
+  },
+  "eslintConfig": {
+    "extends": "airbnb-typescript/base",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/config": "0.0.36",
+    "@types/express": "^4.17.7",
+    "@types/jest": "^26.0.10",
+    "@types/lodash": "^4.14.159",
+    "@types/memcached": "^2.2.6",
+    "@types/mongodb": "^3.5.26",
+    "@types/node": "^14.6.0",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.1",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3"
+  }
+}
